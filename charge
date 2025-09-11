@@ -1,0 +1,84 @@
+📘 Cahier des charges – Site vitrine de l’agence Abou Hamama Moundou
+1. 🎯 Objectifs du projet
+
+    Créer un site vitrine clair, accessible et responsive pour l’agence de transport interurbain Abou Hamama à Moundou.
+
+    Informer les clients sur les destinations, horaires, tarifs, services et modalités de réservation.
+
+    Renforcer la visibilité locale et la confiance des usagers grâce à une communication transparente et professionnelle.
+
+2. 🧱 Architecture du site
+Rubrique	Contenu attendu
+Accueil	Slogan, photo du bus, présentation rapide, bouton vers les horaires.
+À propos	Historique de l’agence, valeurs, couverture géographique, sécurité.
+Destinations & horaires	Tableau des trajets, durées, fréquences, heures de départ.
+Tarifs	Grille des prix en FCFA selon destination et type de siège.
+Réservation	Formulaire simple + bouton WhatsApp direct.
+Services complémentaires	Envoi de colis, réductions, réservation de groupe.
+Contact	Adresse, téléphone, WhatsApp, carte Google Maps.
+FAQ	Réponses aux questions fréquentes (bagages, annulations, sécurité).
+3. 🚌 Analyse des destinations
+Trajet	Distance	Durée estimée	Fréquence
+Moundou → N’Djaména	~500 km	10–12h	1–2 départs/jour
+Moundou → Doba	~100 km	2h	2–3 départs/jour
+Moundou → Sarh	~300 km	6–7h	1 départ/jour
+Moundou → Bongor	~250 km	5h	1 départ/jour
+Moundou → Koumra	~150 km	3h	1–2 départs/jour
+4. 💰 Grille tarifaire (indicative)
+Trajet	Tarif standard	Tarif confort
+Moundou → N’Djaména	8 000 – 10 000 FCFA	12 000 – 15 000 FCFA
+Moundou → Doba	2 000 – 3 000 FCFA	4 000 FCFA
+Moundou → Sarh	5 000 – 6 500 FCFA	8 000 FCFA
+Moundou → Bongor	4 000 – 5 000 FCFA	6 000 FCFA
+Moundou → Koumra	3 000 – 4 000 FCFA	5 000 FCFA
+5. 🕒 Horaires types
+Destination	Départ matin	Départ après-midi	Départ nuit
+N’Djaména	06h00 – 07h00	14h00 – 15h00	20h00 (si autorisé)
+Doba	08h00 – 09h00	16h00	—
+Sarh	07h00	—	—
+Bongor	08h30	—	—
+Koumra	09h00	17h00	—
+6. 📞 Méthodes de réservation
+Méthode principale : WhatsApp
+
+    Numéro affiché sur le site et les supports physiques.
+
+    Message type :
+
+Méthodes secondaires :
+
+    📞 Appel téléphonique (agent disponible).
+
+    🧾 Réservation sur place (guichet).
+
+    🖥️ Formulaire web (optionnel, avec redirection vers WhatsApp ou base MySQL).
+
+7. 🖥️ Spécifications techniques
+Élément	Détail
+Langue	Français (optionnel : arabe ou sara)
+CMS recommandé	WordPress ou développement PHP/MySQL personnalisé
+Hébergement	VPS avec certificat SSL (Let’s Encrypt), bande passante adaptée
+Responsive design	Priorité mobile (smartphones Android)
+Sécurité	Protection des données, formulaire anti-spam, backups réguliers
+Performances	Chargement rapide, optimisation des images, cache local
+8. 📸 Contenus à fournir
+
+    Photos des bus, guichet, personnel.
+
+    Coordonnées exactes de l’agence à Moundou.
+
+    Tableau des horaires et tarifs.
+
+    Témoignages clients (texte ou audio).
+
+    Logo (à créer si inexistant).
+
+    Engagements sécurité et qualité.
+
+9. 📈 Suivi et évolutivité
+
+    Interface admin pour gérer les horaires, les tarifs et les réservations.
+
+    Statistiques mensuelles : nombre de passagers, trajets les plus demandés.
+
+    Possibilité d’ajouter une section “Actualités” ou “Alertes” (ex : suspension nocturne).
