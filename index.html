@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agence de Transport Abou Hamama - Moundou</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #c29a42;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #f9f9f9;
+            --dark-color: #333;
+            --text-color: #444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        body.rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .logo h1 {
+            font-size: 1.4rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .language-switcher {
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 4px;
+        }
+        
+        .language-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: background-color 0.3s;
+        }
+        
+        .language-btn.active {
+            background-color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 80px 15px;
+        }
+        
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .btn:hover {
+            background-color: #a88238;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Sections générales */
+        section {
+            padding: 50px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 15px auto;
+        }
+        
+        /* Section À propos */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Section Destinations & Horaires */
+        .destinations-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .destinations-table th, .destinations-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+        
+        .destinations-table th {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .destinations-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .destinations-table tr:hover {
+            background-color: #e9e9e9;
+        }
+        
+        /* Section Tarifs */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .pricing-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pricing-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 12px 0;
+            font-weight: 700;
+        }
+        
+        .price-type {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-color);
+            font-weight: normal;
+        }
+        
+        /* Section Réservation */
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        
+        .booking-form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 18px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.95rem;
+        }
+        
+        .departure-times {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 8px;
+        }
+        
+        .time-slot {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.85rem;
+        }
+        
+        .time-slot:hover {
+            background-color: #e9e9e9;
+        }
+        
+        .time-slot.selected {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .time-slot.disabled {
+            background-color: #f9f9f9;
+            color: #999;
+            cursor: not-allowed;
+        }
+        
+        .whatsapp-booking {
+            background-color: #25D366;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .whatsapp-booking i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Section Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .service-card i {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: #f5f5f5;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 180px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Section Contact */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+        
+        .contact-item i {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-right: 12px;
+        }
+        
+        .map {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            border: none;
+        }
+        
+        /* Section FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: white;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .faq-answer {
+            padding: 0 18px 18px;
+            border-top: 1px solid #eee;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 35px 0 15px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            transition: background-color 0.3s;
+            color: white;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .testimonial-card i {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            opacity: 0.3;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 12px;
+            object-fit: cover;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content, .booking-container, .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .departure-times {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 12px;
+                right: 15px;
+            }
+            
+            .header-actions {
+                margin-top: 12px;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            .destinations-table {
+                font-size: 0.85rem;
+            }
+            
+            .destinations-table th, .destinations-table td {
+                padding: 8px;
+            }
+            
+            .departure-times {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                padding: 60px 15px;
+            }
+            
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            .btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .booking-form, .whatsapp-booking {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.4rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+            }
+            
+            .pricing-grid, .services-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-item {
+                height: 150px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Corrections RTL */
+        body.rtl .contact-item i,
+        body.rtl .testimonial-author img,
+        body.rtl .social-links a,
+        body.rtl .footer-section ul li i {
+            margin-right: 0;
+            margin-left: 12px;
+        }
+        
+        body.rtl .faq-question,
+        body.rtl .contact-item,
+        body.rtl .testimonial-author {
+            flex-direction: row-reverse;
+        }
+        
+        body.rtl .destinations-table th, 
+        body.rtl .destinations-table td {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-bus"></i>
+                    <h1 data-translate="company_name">Abou Hamama Transport</h1>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="#accueil" data-translate="home">Accueil</a></li>
+                        <li><a href="#apropos" data-translate="about">À propos</a></li>
+                        <li><a href="#destinations" data-translate="destinations">Destinations</a></li>
+                        <li><a href="#tarifs" data-translate="pricing">Tarifs</a></li>
+                        <li><a href="#galerie" data-translate="gallery">Galerie</a></li>
+                        <li><a href="#reservation" data-translate="booking">Réservation</a></li>
+                        <li><a href="#contact" data-translate="contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="language-switcher">
+                        <button class="language-btn active" data-lang="fr">FR</button>
+                        <button class="language-btn" data-lang="ar">AR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <h2 data-translate="hero_title">Voyagez en toute sécurité avec Abou Hamama</h2>
+            <p data-translate="hero_text">Découvrez le Tchad avec confort et sérénité. Service de transport interurbain de qualité depuis Moundou.</p>
+            <a href="#destinations" class="btn" data-translate="view_schedules">Voir les horaires</a>
+            <a href="#reservation" class="btn btn-outline" style="margin-left: 15px;" data-translate="book_now">Réserver maintenant</a>
+        </div>
+    </section>
+
+    <!-- À propos -->
+    <section id="apropos">
+        <div class="container">
+            <h2 class="section-title" data-translate="about_us">À propos de nous</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-translate="about_text_1">Fondée en 2005, l'agence de transport Abou Hamama est devenue une référence dans le secteur du transport interurbain à Moundou et dans tout le Tchad.</p>
+                    <p data-translate="about_text_2">Notre mission est de proposer un service de transport fiable, confortable et sécurisé à des tarifs accessibles pour tous.</p>
+                    <p data-translate="about_text_3">Nous desservons les principales villes du Tchad avec une flotte de bus modernes et entretenus régulièrement pour garantir votre sécurité.</p>
+                    <p data-translate="about_text_4">Notre équipe de chauffeurs expérimentés et notre personnel dévoué sont à votre service pour rendre votre voyage agréable.</p>
+                    <div style="margin-top: 20px;">
+                        <a href="#contact" class="btn" data-translate="contact_us">Nous contacter</a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Agence Abou Hamama à Moundou">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations & Horaires -->
+    <section id="destinations" style="background-color: #f5f5f5;">
+        <div class="container">
+            <h2 class="section-title" data-translate="destinations_schedules">Destinations & Horaires</h2>
+            <p style="text-align: center; margin-bottom: 30px;" data-translate="discover_routes">Découvrez nos trajets réguliers au départ de Moundou</p>
+            
+            <table class="destinations-table">
+                <thead>
+                    <tr>
+                        <th data-translate="destination">Destination</th>
+                        <th data-translate="distance">Distance</th>
+                        <th data-translate="duration">Durée</th>
+                        <th data-translate="frequency">Fréquence</th>
+                        <th data-translate="morning_departures">Départs matin</th>
+                        <th data-translate="afternoon_departures">Départs après-midi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>N'Djaména</td>
+                        <td>~500 km</td>
+                        <td>10-12h</td>
+                        <td data-translate="departures_1_2">1-2 départs/jour</td>
+                        <td>06h00 - 07h00</td>
+                        <td>14h00 - 15h00</td>
+                    </tr>
+                    <tr>
+                        <td>Doba</td>
+                        <td>~100 km</td>
+                        <td>2h</td>
+                        <td data-translate="departures_2_3">2-3 départs/jour</td>
+                        <td>08h00 - 09h00</td>
+                        <td>16h00</td>
+                    </tr>
+                    <tr>
+                        <td>Sarh</td>
+                        <td>~300 km</td>
+                        <td>6-7h</td>
+                        <td data-translate="departure_1">1 départ/jour</td>
+                        <td>07h00</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Bongor</td>
+                        <td>~250 km</td>
+                        <td>5h</td>
+                        <td data-translate="departure_1">1 départ/jour</td>
+                        <td>08h30</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Koumra</td>
+                        <td>~150 km</td>
+                        <td>3h</td>
+                        <td data-translate="departures_1_2">1-2 départs/jour</td>
+                        <td>09h00</td>
+                        <td>17h00</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p style="text-align: center; margin-top: 20px; font-style: italic;" data-translate="schedule_note">
+                Les horaires sont susceptibles de changer, veuillez nous contacter pour confirmation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Tarifs -->
+    <section id="tarifs">
+        <div class="container">
+            <h2 class="section-title" data-translate="our_prices">Nos Tarifs</h2>
+            <p style="text-align: center; margin-bottom: 30px;" data-translate="prices_per_person">Prix en FCFA par trajet et par personne</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Moundou → N'Djaména</h3>
+                    <div class="price">8 000 - 10 000 <span class="price-type" data-translate="standard">Standard</span></div>
+                    <div class="price">12 000 - 15 000 <span class="price-type" data-translate="comfort">Confort</span></div>
+                    <p data-translate="long_journey">Trajet long confortable avec pause repas</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Moundou → Doba</h3>
+                    <div class="price">2 000 - 3 000 <span class="price-type" data-translate="standard">Standard</span></div>
+                    <div class="price">4 000 <span class="price-type" data-translate="comfort">Confort</span></div>
+                    <p data-translate="short_journey">Trajet court, plusieurs départs quotidiens</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Moundou → Sarh</h3>
+                    <div class="price">5 000 - 6 500 <span class="price-type" data-translate="standard">Standard</span></div>
+                    <div class="price">8 000 <span class="price-type" data-translate="comfort">Confort</span></div>
+                    <p data-translate="direct_route">Trajet direct sans correspondance</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Moundou → Bongor</h3>
+                    <div class="price">4 000 - 5 000 <span class="price-type" data-translate="standard">Standard</span></div>
+                    <div class="price">6 000 <span class="price-type" data-translate="comfort">Confort</span></div>
+                    <p data-translate="morning_departure">Départ matinal unique</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Moundou → Koumra</h3>
+                    <div class="price">3 000 - 4 000 <span class="price-type" data-translate="standard">Standard</span></div>
+                    <div class="price">5 000 <span class="price-type" data-translate="comfort">Confort</span></div>
+                    <p data-translate="two_departures">Deux départs quotidiens</p>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 30px;">
+                <strong data-translate="comfort_service">Service Confort</strong> : <span data-translate="comfort_features">Sièges plus spacieux, climatisation renforcée, collation offerte</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" style="color: white;" data-translate="customer_reviews">Ce que disent nos clients</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right"></i>
+                    <p class="testimonial-text" data-translate="testimonial_1">"J'utilise régulièrement les services d'Abou Hamama pour mes trajets entre Moundou et N'Djaména. Toujours à l'heure et très professionnel!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                        <div>
+                            <strong>Mahamat Hassan</strong>
+                            <p data-translate="regular_traveler">Voyageur régulier</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right"></i>
+                    <p class="testimonial-text" data-translate="testimonial_2">"Service confort très satisfaisant. Les sièges sont spacieux et la climatisation fonctionne parfaitement même pendant les grandes chaleurs."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                        <div>
+                            <strong>Amina Ousman</strong>
+                            <p data-translate="traveler">Voyageuse</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right"></i>
+                    <p class="testimonial-text" data-translate="testimonial_3">"J'ai envoyé un colis à ma famille à Doba via Abou Hamama. Livraison rapide et sécurisée. Je recommande vivement!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client">
+                        <div>
+                            <strong>Idriss Barka</strong>
+                            <p data-translate="customer">Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section id="galerie" class="gallery">
+        <div class="container">
+            <h2 class="section-title" data-translate="photo_gallery">Galerie Photo</h2>
+            <p style="text-align: center; margin-bottom: 30px;" data-translate="discover_agency">Découvrez notre agence et nos véhicules</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Entrée de l'agence Abou Hamama">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Bus de l'agence">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Intérieur confortable du bus">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Guichet de réservation">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1584982751601-97c933f4eb4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Chauffeur professionnel">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1576675466969-38eeae4b41f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Service clientèle">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Réservation -->
+    <section id="reservation" style="background-color: #f5f5f5;">
+        <div class="container">
+            <h2 class="section-title" data-translate="booking">Réservation</h2>
+            <p style="text-align: center; margin-bottom: 30px;" data-translate="book_form_or_whatsapp">Réservez votre place par formulaire ou contactez-nous directement sur WhatsApp</p>
+            
+            <div class="booking-container">
+                <div class="booking-form">
+                    <h3 style="margin-bottom: 20px; text-align: center;" data-translate="booking_form">Formulaire de réservation</h3>
+                    <form id="reservationForm">
+                        <div class="form-group">
+                            <label for="nom" data-translate="full_name">Nom complet</label>
+                            <input type="text" id="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-translate="phone">Téléphone</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="trajet" data-translate="route">Trajet</label>
+                            <select id="trajet" required onchange="updateDepartureTimes()">
+                                <option value="" data-translate="select_route">Sélectionnez un trajet</option>
+                                <option value="ndjamena">Moundou → N'Djaména</option>
+                                <option value="doba">Moundou → Doba</option>
+                                <option value="sarh">Moundou → Sarh</option>
+                                <option value="bongor">Moundou → Bongor</option>
+                                <option value="koumra">Moundou → Koumra</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date" data-translate="travel_date">Date de voyage</label>
+                            <input type="date" id="date" required min="">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-translate="departure_time">Heure de départ</label>
+                            <div id="departure-times-container" class="departure-times">
+                                <div class="time-slot disabled" data-translate="select_route_first">Sélectionnez d'abord un trajet</div>
+                            </div>
+                            <input type="hidden" id="selected-time" name="selected-time" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="passagers" data-translate="passengers_number">Nombre de passagers</label>
+                            <input type="number" id="passagers" min="1" value="1" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service-type" data-translate="service_type">Type de service</label>
+                            <select id="service-type" required>
+                                <option value="standard" data-translate="standard">Standard</option>
+                                <option value="confort" data-translate="comfort">Confort</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" data-translate="message_optional">Message (optionnel)</label>
+                            <textarea id="message" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;" data-translate="send_request">Envoyer la demande</button>
+                    </form>
+                </div>
+                
+                <div class="whatsapp-booking">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3 data-translate="book_via_whatsapp">Réservez directement via WhatsApp</h3>
+                    <p data-translate="contact_us_at">Contactez-nous au</p>
+                    <p style="font-size: 1.5rem; margin: 10px 0;">+235 66 66 66 66</p>
+                    <p data-translate="quick_response">Notre équipe vous répondra rapidement pour confirmer votre réservation.</p>
+                    <a href="https://wa.me/23566666666" class="btn" style="background-color: white; color: #25D366; margin-top: 20px;">
+                        <i class="fab fa-whatsapp"></i> <span data-translate="open_whatsapp">Ouvrir WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services complémentaires -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title" data-translate="additional_services">Services complémentaires</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-box"></i>
+                    <h3 data-translate="parcel_sending">Envoi de colis</h3>
+                    <p data-translate="parcel_text">Nous transportons vos colis en toute sécurité vers toutes nos destinations. Emballage sécurisé fourni.</p>
+                    <p><strong data-translate="prices">Tarifs:</strong> <span data-translate="from_1000">À partir de 1000 FCFA/kg</span></p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3 data-translate="group_booking">Réservation de groupe</h3>
+                    <p data-translate="group_text">Tarifs préférentiels pour les groupes à partir de 10 personnes. Transport organisé pour événements.</p>
+                    <p><strong data-translate="discount">Remise:</strong> <span data-translate="ten_percent">10% pour les groupes</span></p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-percentage"></i>
+                    <h3 data-translate="special_discounts">Réductions spéciales</h3>
+                    <p data-translate="discounts_text">Tarifs réduits pour les enfants, étudiants et personnes âgées. Carte fidélité disponible.</p>
+                    <p><strong data-translate="children">Enfants:</strong> <span data-translate="fifty_percent">-50% pour les moins de 10 ans</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="background-color: #f5f5f5;">
+        <div class="container">
+            <h2 class="section-title" data-translate="contact">Contact</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 20px;" data-translate="contact_info">Coordonnées</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p><strong data-translate="agency_address">Adresse de l'agence</strong></p>
+                            <p>Rue du Marché, Moundou, Tchad</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <p><strong data-translate="phone">Téléphone</strong></p>
+                            <p>+235 22 22 22 22</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <p><strong>WhatsApp</strong></p>
+                            <p>+235 66 66 66 66</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="far fa-clock"></i>
+                        <div>
+                            <p><strong data-translate="opening_hours">Horaires d'ouverture</strong></p>
+                            <p data-translate="mon_sat">Lundi au Samedi: 6h00 - 20h00</p>
+                            <p data-translate="sun">Dimanche: 7h00 - 18h00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15612.404930118032!2d16.074825!3d8.56659545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10f90e799d2df3a3%3A0x4297a9f4e4561c0!2sMoundou%2C%20Tchad!5e0!3m2!1sfr!2sfr!4v1684850000000!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <h2 class="section-title" data-translate="faq">Questions fréquentes</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-translate="faq_1">Quelle est la politique concernant les bagages ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_1_answer">Chaque passager a droit à un bagage à main et un bagage en soute de 20kg maximum. Les bagages supplémentaires sont soumis à un supplément de 1000 FCFA par kg.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-translate="faq_2">Comment annuler ou modifier une réservation ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_2_answer">Les annulations et modifications sont possibles jusqu'à 24h avant le départ. Contactez-nous par téléphone ou WhatsApp pour toute modification. Les frais d'annulation sont de 10% du montant total.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-translate="faq_3">Quelles mesures de sécurité sont en place ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_3_answer">Tous nos véhicules sont équipés de ceintures de sécurité et sont inspectés régulièrement. Nos chauffeurs sont expérimentés et respectent strictement le code de la route. Nous disposons également d'une assurance responsabilité civile complète.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-translate="faq_4">Proposez-vous des services de restauration à bord ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq_4_answer">Sur les longs trajets (N'Djaména), une bouteille d'eau et une collation sont offertes. Pour les autres trajets, nous faisons des pauses dans des lieux où vous pourrez vous restaurer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="company_name">Abou Hamama Transport</h3>
+                    <p data-translate="footer_description">Service de transport interurbain de qualité depuis Moundou vers toutes les principales villes du Tchad.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="quick_links">Liens rapides</h3>
+                    <ul>
+                        <li><a href="#accueil" data-translate="home">Accueil</a></li>
+                        <li><a href="#apropos" data-translate="about">À propos</a></li>
+                        <li><a href="#destinations" data-translate="destinations">Destinations</a></li>
+                        <li><a href="#tarifs" data-translate="pricing">Tarifs</a></li>
+                        <li><a href="#reservation" data-translate="booking">Réservation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="contact">Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Rue du Marché, Moundou, Tchad</li>
+                        <li><i class="fas fa-phone-alt"></i> +235 22 22 22 22</li>
+                        <li><i class="fab fa-whatsapp"></i> +235 66 66 66 66</li>
+                        <li><i class="far fa-envelope"></i> contact@abouhamama.td</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 <span data-translate="company_name">Agence de Transport Abou Hamama</span> - <span data-translate="all_rights_reserved">Tous droits réservés</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Données de traduction
+        const translations = {
+            fr: {
+                // Navigation
+                "home": "Accueil",
+                "about": "À propos",
+                "destinations": "Destinations",
+                "pricing": "Tarifs",
+                "gallery": "Galerie",
+                "booking": "Réservation",
+                "contact": "Contact",
+                
+                // Header
+                "company_name": "Abou Hamama Transport",
+                
+                // Hero
+                "hero_title": "Voyagez en toute sécurité avec Abou Hamama",
+                "hero_text": "Découvrez le Tchad avec confort et sérénité. Service de transport interurbain de qualité depuis Moundou.",
+                "view_schedules": "Voir les horaires",
+                "book_now": "Réserver maintenant",
+                
+                // About
+                "about_us": "À propos de nous",
+                "about_text_1": "Fondée en 2005, l'agence de transport Abou Hamama est devenue une référence dans le secteur du transport interurbain à Moundou et dans tout le Tchad.",
+                "about_text_2": "Notre mission est de proposer un service de transport fiable, confortable et sécurisé à des tarifs accessibles pour tous.",
+                "about_text_3": "Nous desservons les principales villes du Tchad avec une flotte de bus modernes et entretenus régulièrement pour garantir votre sécurité.",
+                "about_text_4": "Notre équipe de chauffeurs expérimentés et notre personnel dévoué sont à votre service pour rendre votre voyage agréable.",
+                "contact_us": "Nous contacter",
+                
+                // Destinations
+                "destinations_schedules": "Destinations & Horaires",
+                "discover_routes": "Découvrez nos trajets réguliers au départ de Moundou",
+                "destination": "Destination",
+                "distance": "Distance",
+                "duration": "Durée",
+                "frequency": "Fréquence",
+                "morning_departures": "Départs matin",
+                "afternoon_departures": "Départs après-midi",
+                "departures_1_2": "1-2 départs/jour",
+                "departures_2_3": "2-3 départs/jour",
+                "departure_1": "1 départ/jour",
+                "schedule_note": "Les horaires sont susceptibles de changer, veuillez nous contacter pour confirmation.",
+                
+                // Pricing
+                "our_prices": "Nos Tarifs",
+                "prices_per_person": "Prix en FCFA par trajet et par personne",
+                "standard": "Standard",
+                "comfort": "Confort",
+                "long_journey": "Trajet long confortable avec pause repas",
+                "short_journey": "Trajet court, plusieurs départs quotidiens",
+                "direct_route": "Trajet direct sans correspondance",
+                "morning_departure": "Départ matinal unique",
+                "two_departures": "Deux départs quotidiens",
+                "comfort_service": "Service Confort",
+                "comfort_features": "Sièges plus spacieux, climatisation renforcée, collation offerte",
+                
+                // Testimonials
+                "customer_reviews": "Ce que disent nos clients",
+                "testimonial_1": "\"J'utilise régulièrement les services d'Abou Hamama pour mes trajets entre Moundou et N'Djaména. Toujours à l'heure et très professionnel!\"",
+                "regular_traveler": "Voyageur régulier",
+                "testimonial_2": "\"Service confort très satisfaisant. Les sièges sont spacieux et la climatisation fonctionne parfaitement même pendant les grandes chaleurs.\"",
+                "traveler": "Voyageuse",
+                "testimonial_3": "\"J'ai envoyé un colis à ma famille à Doba via Abou Hamama. Livraison rapide et sécurisée. Je recommande vivement!\"",
+                "customer": "Client",
+                
+                // Gallery
+                "photo_gallery": "Galerie Photo",
+                "discover_agency": "Découvrez notre agence et nos véhicules",
+                
+                // Booking
+                "booking": "Réservation",
+                "book_form_or_whatsapp": "Réservez votre place par formulaire ou contactez-nous directement sur WhatsApp",
+                "booking_form": "Formulaire de réservation",
+                "full_name": "Nom complet",
+                "phone": "Téléphone",
+                "route": "Trajet",
+                "select_route": "Sélectionnez un trajet",
+                "travel_date": "Date de voyage",
+                "departure_time": "Heure de départ",
+                "select_route_first": "Sélectionnez d'abord un trajet",
+                "passengers_number": "Nombre de passagers",
+                "service_type": "Type de service",
+                "message_optional": "Message (optionnel)",
+                "send_request": "Envoyer la demande",
+                "book_via_whatsapp": "Réservez directement via WhatsApp",
+                "contact_us_at": "Contactez-nous au",
+                "quick_response": "Notre équipe vous répondra rapidement pour confirmer votre réservation.",
+                "open_whatsapp": "Ouvrir WhatsApp",
+                
+                // Services
+                "additional_services": "Services complémentaires",
+                "parcel_sending": "Envoi de colis",
+                "parcel_text": "Nous transportons vos colis en toute sécurité vers toutes nos destinations. Emballage sécurisé fourni.",
+                "prices": "Tarifs",
+                "from_1000": "À partir de 1000 FCFA/kg",
+                "group_booking": "Réservation de groupe",
+                "group_text": "Tarifs préférentiels pour les groupes à partir de 10 personnes. Transport organisé pour événements.",
+                "discount": "Remise",
+                "ten_percent": "10% pour les groupes",
+                "special_discounts": "Réductions spéciales",
+                "discounts_text": "Tarifs réduits pour les enfants, étudiants et personnes âgées. Carte fidélité disponible.",
+                "children": "Enfants",
+                "fifty_percent": "-50% pour les moins de 10 ans",
+                
+                // Contact
+                "contact_info": "Coordonnées",
+                "agency_address": "Adresse de l'agence",
+                "opening_hours": "Horaires d'ouverture",
+                "mon_sat": "Lundi au Samedi: 6h00 - 20h00",
+                "sun": "Dimanche: 7h00 - 18h00",
+                
+                // FAQ
+                "faq": "Questions fréquentes",
+                "faq_1": "Quelle est la politique concernant les bagages ?",
+                "faq_1_answer": "Chaque passager a droit à un bagage à main et un bagage en soute de 20kg maximum. Les bagages supplémentaires sont soumis à un supplément de 1000 FCFA par kg.",
+                "faq_2": "Comment annuler ou modifier une réservation ?",
+                "faq_2_answer": "Les annulations et modifications sont possibles jusqu'à 24h avant le départ. Contactez-nous par téléphone ou WhatsApp pour toute modification. Les frais d'annulation sont de 10% du montant total.",
+                "faq_3": "Quelles mesures de sécurité sont en place ?",
+                "faq_3_answer": "Tous nos véhicules sont équipés de ceintures de sécurité et sont inspectés régulièrement. Nos chauffeurs sont expérimentés et respectent strictement le code de la route. Nous disposons également d'une assurance responsabilité civile complète.",
+                "faq_4": "Proposez-vous des services de restauration à bord ?",
+                "faq_4_answer": "Sur les longs trajets (N'Djaména), une bouteille d'eau et une collation sont offertes. Pour les autres trajets, nous faisons des pauses dans des lieux où vous pourrez vous restaurer.",
+                
+                // Footer
+                "quick_links": "Liens rapides",
+                "footer_description": "Service de transport interurbain de qualité depuis Moundou vers toutes les principales villes du Tchad.",
+                "all_rights_reserved": "Tous droits réservés"
+            },
+            ar: {
+                // Navigation
+                "home": "الرئيسية",
+                "about": "من نحن",
+                "destinations": "الوجهات",
+                "pricing": "الأسعار",
+                "gallery": "معرض الصور",
+                "booking": "الحجز",
+                "contact": "اتصل بنا",
+                
+                // Header
+                "company_name": "نقل أبو حمامة",
+                
+                // Hero
+                "hero_title": "سافر بأمان مع أبو حمامة",
+                "hero_text": "اكتشف تشاد براحة وطمأنينة. خدمة نقل بين المدن عالية الجودة من موندو.",
+                "view_schedules": "عرض الجداول",
+                "book_now": "احجز الآن",
+                
+                // About
+                "about_us": "من نحن",
+                "about_text_1": "تأسست عام 2005، أصبحت وكالة نقل أبو حمامة مرجعًا في قطاع النقل بين المدن في موندو وفي جميع أنحاء تشاد.",
+                "about_text_2": "مهمتنا هي تقديم خدمة نقل موثوقة ومريحة وآمنة بأسعار في متناول الجميع.",
+                "about_text_3": "نخدم المدن الرئيسية في تشاد بأسطول من الحافلات الحديثة التي يتم صيانتها بانتظام لضمان سلامتك.",
+                "about_text_4": "فريق السائقين ذوي الخبرة وموظفونا المتفانون في خدمتك لجعل رحلتك ممتعة.",
+                "contact_us": "اتصل بنا",
+                
+                // Destinations
+                "destinations_schedules": "الوجهات والجداول",
+                "discover_routes": "اكتشف خطوطنا المنتظمة المنطلقة من موندو",
+                "destination": "الوجهة",
+                "distance": "المسافة",
+                "duration": "المدة",
+                "frequency": "التكرار",
+                "morning_departures": "انطلاقات الصباح",
+                "afternoon_departures": "انطلاقات بعد الظهر",
+                "departures_1_2": "1-2 انطلاق/يوم",
+                "departures_2_3": "2-3 انطلاق/يوم",
+                "departure_1": "1 انطلاق/يوم",
+                "schedule_note": "الجداول قابلة للتغيير، يرجى الاتصال بنا للتأكد.",
+                
+                // Pricing
+                "our_prices": "أسعارنا",
+                "prices_per_person": "السعر بالفرنك الأفريقي للرحلة وللشخص",
+                "standard": "عادي",
+                "comfort": "مريح",
+                "long_journey": "رحلة طويلة مريحة مع استراحة طعام",
+                "short_journey": "رحلة قصيرة، عدة انطلقات يومية",
+                "direct_route": "رحلة مباشرة دون توقف",
+                "morning_departure": "انطلاق صباحي وحيد",
+                "two_departures": "انطلاقان يوميان",
+                "comfort_service": "خدمة مريحة",
+                "comfort_features": "مقاعد أكثر اتساعًا، تكييف معزز، وجبة خفيفة مقدمة",
+                
+                // Testimonials
+                "customer_reviews": "ما يقوله عملاؤنا",
+                "testimonial_1": "\"أستخدم بانتظام خدمات أبو حمامة لرحلاتي بين موندو وانجمينا. دائمًا في الوقت المحدد ومحترف جدًا!\"",
+                "regular_traveler": "مسافر منتظم",
+                "testimonial_2": "\"الخدمة المريحة مرضية للغاية. المقاعد واسعة ومكيف الهواء يعمل بشكل مثالي حتى خلال الحرارة الشديدة.\"",
+                "traveler": "مسافرة",
+                "testimonial_3": "\"لقد أرسلت طردًا إلى عائلتي في دوبا عبر أبو حمامة. توصيل سريع وآمن. أوصي بشدة!\"",
+                "customer": "عميل",
+                
+                // Gallery
+                "photo_gallery": "معرض الصور",
+                "discover_agency": "اكتشف وكالتنا ومركباتنا",
+                
+                // Booking
+                "booking": "الحجز",
+                "book_form_or_whatsapp": "احجز مقعدك عبر النموذج أو اتصل بنا مباشرة على واتساب",
+                "booking_form": "نموذج الحجز",
+                "full_name": "الاسم الكامل",
+                "phone": "الهاتف",
+                "route": "الطريق",
+                "select_route": "اختر طريقًا",
+                "travel_date": "تاريخ السفر",
+                "departure_time": "وقت الانطلاق",
+                "select_route_first": "اختر طريقًا أولاً",
+                "passengers_number": "عدد المسافرين",
+                "service_type": "نوع الخدمة",
+                "message_optional": "رسالة (اختياري)",
+                "send_request": "إرسال الطلب",
+                "book_via_whatsapp": "احجز مباشرة عبر واتساب",
+                "contact_us_at": "اتصل بنا على",
+                "quick_response": "سوف responds فريقنا بسرعة لتأكيد حجزك.",
+                "open_whatsapp": "فتح واتساب",
+                
+                // Services
+                "additional_services": "خدمات إضافية",
+                "parcel_sending": "إرسال الطرود",
+                "parcel_text": "ننقل طرودك بأمان إلى جميع وجهاتنا. تغليف آمن مقدم.",
+                "prices": "الأسعار",
+                "from_1000": "بدءًا من 1000 فرنك أفريقي/كغ",
+                "group_booking": "حجز جماعي",
+                "group_text": "أسعار تفضيلية للمجموعات من 10 أشخاص فما فوق. نقل منظم للفعاليات.",
+                "discount": "خصم",
+                "ten_percent": "10% للمجموعات",
+                "special_discounts": "خصومات خاصة",
+                "discounts_text": "أسعار مخفضة للأطفال والطلاب وكبار السن. بطاقة ولاء متاحة.",
+                "children": "الأطفال",
+                "fifty_percent": "-50% للأقل من 10 سنوات",
+                
+                // Contact
+                "contact_info": "معلومات الاتصال",
+                "agency_address": "عنوان الوكالة",
+                "opening_hours": "ساعات العمل",
+                "mon_sat": "الإثنين إلى السبت: 6:00 - 20:00",
+                "sun": "الأحد: 7:00 - 18:00",
+                
+                // FAQ
+                "faq": "أسئلة شائعة",
+                "faq_1": "ما هي سياسة الأمتعة؟",
+                "faq_1_answer": "يحق لكل مسافر أمتعة يدوية وأمتعة مسطحة بحد أقصى 20 كجم. الأمتعة الإضافية تخضغ لرسوم إضافية قدرها 1000 فرنك أفريقي للكيلوغرام.",
+                "faq_2": "كيف يمكن إلغاء أو تعديل الحجز؟",
+                "faq_2_answer": "الإلغاءات والتعديلات ممكنة حتى 24 ساعة قبل المغادرة. اتصل بنا عبر الهاتف أو واتساب لأي تعديل. رسوم الإلغاء هي 10% من المبلغ الإجمالي.",
+                "faq_3": "ما هي إجراءات السلامة المعمول بها؟",
+                "faq_3_answer": "جميع مركباتنا مجهزة بأحزمة أمان ويتم فحصها بانتظام. سائقونا ذوو خبرة ويحترمون strictly قواعد المرور. لدينا أيضًا تأمين مسؤولية مدنية كامل.",
+                "faq_4": "هل تقدمون خدمات الطعام على متن الحافلات؟",
+                "faq_4_answer": "في الرحلات الطويلة (انجمينا)، يتم تقديم زجاجة ماء ووجبة خفيفة. بالنسبة للرحلات الأخرى، نقوم بالتوقف في أماكن حيث يمكنك تناول الطعام.",
+                
+                // Footer
+                "quick_links": "روابط سريعة",
+                "footer_description": "خدمة نقل بين المدن عالية الجودة منذ موندو إلى جميع المدن الرئيسية في تشاد.",
+                "all_rights_reserved": "جميع الحقوق محفوظة"
+            }
+        };
+
+        // Menu mobile
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        });
+        
+        // FAQ accordéon
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Fermer toutes les autres réponses
+                document.querySelectorAll('.faq-answer').forEach(item => {
+                    if (item !== answer && item.style.display === 'block') {
+                        item.style.display = 'none';
+                        item.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+                        item.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Basculer l'affichage de la réponse actuelle
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    answer.style.display = 'block';
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        });
+        
+        // Définir la date minimale pour la réservation (aujourd'hui)
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+        
+        // Données des horaires de départ par trajet
+        const departureTimes = {
+            'ndjamena': ['06:00', '07:00', '14:00', '15:00', '20:00'],
+            'doba': ['08:00', '09:00', '16:00'],
+            'sarh': ['07:00'],
+            'bongor': ['08:30'],
+            'koumra': ['09:00', '17:00']
+        };
+        
+        // Mettre à jour les horaires de départ en fonction du trajet sélectionné
+        function updateDepartureTimes() {
+            const trajetSelect = document.getElementById('trajet');
+            const departureContainer = document.getElementById('departure-times-container');
+            const selectedTimeInput = document.getElementById('selected-time');
+            
+            // Réinitialiser la sélection
+            selectedTimeInput.value = '';
+            
+            if (!trajetSelect.value) {
+                departureContainer.innerHTML = '<div class="time-slot disabled" data-translate="select_route_first">Sélectionnez d\'abord un trajet</div>';
+                translateElement(departureContainer.querySelector('[data-translate]'));
+                return;
+            }
+            
+            const times = departureTimes[trajetSelect.value];
+            let html = '';
+            
+            if (times && times.length > 0) {
+                times.forEach(time => {
+                    html += `<div class="time-slot" data-time="${time}">${time}</div>`;
+                });
+            } else {
+                html = '<div class="time-slot disabled" data-translate="no_schedule">Aucun horaire disponible</div>';
+            }
+            
+            departureContainer.innerHTML = html;
+            
+            // Traduire le message si nécessaire
+            const translateElement = departureContainer.querySelector('[data-translate]');
+            if (translateElement) {
+                translateElement(translateElement);
+            }
+            
+            // Ajouter les écouteurs d'événements pour les créneaux horaires
+            document.querySelectorAll('.time-slot:not(.disabled)').forEach(slot => {
+                slot.addEventListener('click', function() {
+                    // Désélectionner tous les créneaux
+                    document.querySelectorAll('.time-slot').forEach(s => {
+                        s.classList.remove('selected');
+                    });
+                    
+                    // Sélectionner le créneau cliqué
+                    this.classList.add('selected');
+                    selectedTimeInput.value = this.getAttribute('data-time');
+                });
+            });
+        }
+        
+        // Formulaire de réservation
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Vérifier qu'un créneau horaire a été sélectionné
+            if (!document.getElementById('selected-time').value) {
+                alert(currentLang === 'fr' ? 'Veuillez sélectionner une heure de départ.' : 'يرجى اختيار وقت المغادرة');
+                return;
+            }
+            
+            // Récupérer les données du formulaire
+            const formData = {
+                nom: document.getElementById('nom').value,
+                phone: document.getElementById('phone').value,
+                trajet: document.getElementById('trajet').options[document.getElementById('trajet').selectedIndex].text,
+                date: document.getElementById('date').value,
+                heure: document.getElementById('selected-time').value,
+                passagers: document.getElementById('passagers').value,
+                service: document.getElementById('service-type').options[document.getElementById('service-type').selectedIndex].text,
+                message: document.getElementById('message').value
+            };
+            
+            // Générer le message de confirmation
+            const confirmationMessage = currentLang === 'fr' ? 
+                `Merci ${formData.nom} pour votre réservation!
+                
+                Détails de votre voyage:
+                - Trajet: ${formData.trajet}
+                - Date: ${formData.date}
+                - Heure: ${formData.heure}
+                - Passagers: ${formData.passagers}
+                - Service: ${formData.service}
+                
+                Nous vous contacterons au ${formData.phone} pour confirmer votre réservation.` :
+                `شكرًا ${formData.nom} على حجزك!
+                
+                تفاصيل رحلتك:
+                - الطريق: ${formData.trajet}
+                - التاريخ: ${formData.date}
+                - الوقت: ${formData.heure}
+                - المسافرون: ${formData.passagers}
+                - الخدمة: ${formData.service}
+                
+                سوف نتصل بك على ${formData.phone} لتأكيد حجزك.`;
+            
+            alert(confirmationMessage);
+            this.reset();
+            updateDepartureTimes(); // Réinitialiser les horaires
+        });
+        
+        // Initialiser les horaires de départ
+        updateDepartureTimes();
+        
+        // Gestion du changement de langue
+        let currentLang = 'fr';
+        
+        // Fonction pour traduire un élément spécifique
+        function translateElement(element) {
+            const key = element.getAttribute('data-translate');
+            if (translations[currentLang][key]) {
+                element.textContent = translations[currentLang][key];
+            }
+        }
+        
+        // Fonction pour traduire toute la page
+        function translatePage(lang) {
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+        }
+        
+        document.querySelectorAll('.language-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                if (lang !== currentLang) {
+                    currentLang = lang;
+                    
+                    // Mettre à jour les boutons de langue
+                    document.querySelectorAll('.language-btn').forEach(b => {
+                        b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+                    });
+                    
+                    // Changer la direction du document
+                    document.body.classList.toggle('rtl', lang === 'ar');
+                    
+                    // Traduire le contenu
+                    translatePage(lang);
+                }
+            });
+        });
+        
+        // Initialiser la traduction au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            translatePage(currentLang);
+        });
+    </script>
+</body>
+</html>
